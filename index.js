@@ -60,6 +60,7 @@ const descriptors = {
       {
         url: 'https://chromestatus.com/feature/5741884322349056',
         name: 'Return empty for navigator.plugins and navigator.mimeTypes',
+        optional: true, // Mobile devices return an empty array
         test: () => window.navigator.plugins.length === 0
       },
       {

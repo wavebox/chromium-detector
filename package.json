@@ -1,6 +1,6 @@
 {
   "name": "chromium-detector",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Feature detects the running version of Chromium without any UserAgent parsing",
   "main": "dist/chromium-detector.js",
   "module": "index.js",
@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "webpack --mode=production",
-    "prepare": "npm run build",
+    "prepare": "webpack --mode=production",
     "test": "standard"
   },
   "author": "Thomas Beverley <tom@wavebox.io>",
