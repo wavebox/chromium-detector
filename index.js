@@ -100,7 +100,7 @@ const descriptors = {
       },
       {
         url: 'https://chromestatus.com/feature/5738050678161408',
-        name: 'https://chromestatus.com/features/5738050678161408',
+        name: 'CSS aspect-ratio property',
         test: () => supportsCSSProp('aspectRatio')
       }
     ]
