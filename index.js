@@ -2,7 +2,13 @@
  * @param v: value to check
  * @return true if the value is of type function
  */
-const isFunction = (v) => typeof (v) === 'function'
+const isFunction = (v) => {
+  return (
+    typeof (v) === 'function' &&
+    typeof (v.toString) === 'function' &&
+    v.toString().includes('[native code]')
+  )
+}
 
 /**
  * @param v: value to check
@@ -216,6 +222,7 @@ const descriptors = {
       {
         url: 'https://chromestatus.com/feature/4757990523535360',
         name: 'Barcode Detection API',
+        optional: true, // Some electron instances don't implement this
         test: () => isFunction(window.BarcodeDetector)
       },
       {
