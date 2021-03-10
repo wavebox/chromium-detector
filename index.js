@@ -70,12 +70,13 @@ const descriptors = {
       {
         url: 'https://chromestatus.com/feature/5172464636133376',
         name: 'WebHID support',
+        optional: true, // Mobile devices
         test: () => isObject(window.navigator.hid)
       },
       {
         url: 'https://chromestatus.com/feature/6577673212002304',
         name: 'Web Serial API',
-        optional: true, // Brave doesn't implement this
+        optional: true, // Mobile devices & Brave
         test: () => isObject(window.navigator.serial)
       },
       {
