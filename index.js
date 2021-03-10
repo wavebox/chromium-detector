@@ -74,10 +74,9 @@ const descriptors = {
         test: () => isObject(window.navigator.hid)
       },
       {
-        url: 'https://chromestatus.com/feature/6577673212002304',
-        name: 'Web Serial API',
-        optional: true, // Mobile devices & Brave
-        test: () => isObject(window.navigator.serial)
+        url: 'https://chromestatus.com/feature/6561346332131328',
+        name: 'disclosure-open and disclosure-closed keywords for CSS list-style-type property',
+        test: () => supportsCSSValue('listStyleType', 'disclosure-open')
       },
       {
         url: 'https://chromestatus.com/feature/5685965186138112',
