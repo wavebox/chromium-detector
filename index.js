@@ -58,12 +58,6 @@ const descriptors = {
         test: () => supportsCSSValue('overflow', 'clip')
       },
       {
-        url: 'https://chromestatus.com/feature/5741884322349056',
-        name: 'Return empty for navigator.plugins and navigator.mimeTypes',
-        optional: true, // Mobile devices return an empty array
-        test: () => window.navigator.plugins.length === 0
-      },
-      {
         url: 'https://chromestatus.com/feature/5737185317748736',
         name: 'Support specifying width/height on <source> elements for <picture>',
         test: () => document.createElement('source').width !== undefined
