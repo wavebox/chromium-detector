@@ -48,9 +48,28 @@ const supportsCSSQuery = (query) => {
 
 // https://chromestatus.com/features
 const descriptors = {
-  90: {
+  91: {
     releaseDate: 'Pre-release',
     isPreRelease: true,
+    tests: [
+      {
+        url: 'https://chromestatus.com/feature/5692693659254784',
+        name: 'CSS custom counter styles',
+        test: () => {
+          const $style = document.createElement('style')
+          $style.innerHTML = '@counter-style custom { system: fixed; symbols: Ⓐ Ⓑ Ⓒ; suffix: " "; }'
+          document.head.appendChild($style)
+          const $el = document.createElement('ul')
+          $el.style.listStyle = 'custom'
+          const pass = $el.style.listStyle === 'custom'
+          document.head.removeChild($style)
+          return pass
+        }
+      }
+    ]
+  },
+  90: {
+    releaseDate: '2021-04-14',
     tests: [
       {
         url: 'https://chromestatus.com/feature/5638444178997248',
