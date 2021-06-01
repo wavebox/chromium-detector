@@ -1,6 +1,6 @@
 {
   "name": "chromium-detector",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Feature detects the running version of Chromium without any UserAgent parsing",
   "main": "dist/chromium-detector.js",
   "module": "index.js",
@@ -18,8 +18,8 @@
   "license": "MPL-2.0",
   "devDependencies": {
     "standard": "^16.0.3",
-    "webpack": "^5.24.4",
-    "webpack-cli": "^4.5.0"
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0"
   },
   "standard": {
     "ignore": [
