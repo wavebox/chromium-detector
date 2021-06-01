@@ -48,9 +48,27 @@ const supportsCSSQuery = (query) => {
 
 // https://chromestatus.com/features
 const descriptors = {
-  91: {
+  92: {
     releaseDate: 'Pre-release',
     isPreRelease: true,
+    tests: [
+      {
+        url: 'https://chromestatus.com/feature/6520669959356416',
+        name: 'dayPeriod option for Intl.DateTimeFormat',
+        test: () => {
+          const dtf = new Intl.DateTimeFormat('en', { hour: 'numeric', dayPeriod: 'short' })
+          return dtf.format(new Date('2019-05-20T07:00:00')).length > 4
+        }
+      },
+      {
+        url: 'https://chromestatus.com/feature/6123640410079232',
+        name: 'Relative indexing method for Array, String, and TypedArrays',
+        test: () => isFunction([].at)
+      }
+    ]
+  },
+  91: {
+    releaseDate: '2021-05-21',
     tests: [
       {
         url: 'https://chromestatus.com/feature/5692693659254784',
@@ -96,11 +114,6 @@ const descriptors = {
         url: 'https://chromestatus.com/feature/6561346332131328',
         name: 'disclosure-open and disclosure-closed keywords for CSS list-style-type property',
         test: () => supportsCSSValue('listStyleType', 'disclosure-open')
-      },
-      {
-        url: 'https://chromestatus.com/feature/5685965186138112',
-        name: 'performance.measureUserAgentSpecificMemory()',
-        test: () => isFunction(window.performance.measureUserAgentSpecificMemory)
       }
     ]
   },
