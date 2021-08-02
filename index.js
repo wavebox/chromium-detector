@@ -48,9 +48,40 @@ const supportsCSSQuery = (query) => {
 
 // https://chromestatus.com/features
 const descriptors = {
-  92: {
+  93: {
     releaseDate: 'Pre-release',
     isPreRelease: true,
+    tests: [
+      {
+        url: 'https://chromestatus.com/feature/5642501387976704',
+        name: 'AbortSignal.abort() static method',
+        test: () => isFunction(AbortSignal.abort)
+      },
+      {
+        url: 'https://chromestatus.com/feature/5662263404920832',
+        name: 'Object.hasOwn',
+        test: () => isFunction(Object.hasOwn)
+      },
+      {
+        url: 'https://chromestatus.com/feature/5727099325251584',
+        name: 'Feature: Error.cause property',
+        test: () => {
+          const error = new Error('MyError', { cause: 'testing' })
+          return error.cause === 'testing'
+        }
+      },
+      {
+        url: 'https://chromestatus.com/feature/5092414224072704',
+        name: 'noplaybackrate in HTMLMediaElement.controlsList',
+        test: () => {
+          const $el = document.createElement('video')
+          return $el.controlsList.supports('noplaybackrate')
+        }
+      }
+    ]
+  },
+  92: {
+    releaseDate: '2021-07-20',
     tests: [
       {
         url: 'https://chromestatus.com/feature/6520669959356416',
