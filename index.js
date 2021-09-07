@@ -48,14 +48,45 @@ const supportsCSSQuery = (query) => {
 
 // https://chromestatus.com/features
 const descriptors = {
-  93: {
+  95: {
     releaseDate: 'Pre-release',
     isPreRelease: true,
     tests: [
       {
+        url: 'https://chromestatus.com/features/6304275594477568',
+        name: 'EyeDropper API',
+        test: () => isFunction(window.EyeDropper)
+      },
+      {
+        url: 'https://chromestatus.com/features/5709654999957504',
+        name: 'Logical properties for contain-intrinsic-size',
+        test: () => supportsCSSProp('containIntrinsicBlockSize')
+      }
+    ]
+  },
+  94: {
+    releaseDate: 'Pre-release',
+    isPreRelease: true,
+    tests: [
+      {
+        url: 'https://chromestatus.com/feature/5144822362931200',
+        name: 'Feature Policy: display-capture',
+        test: () => document.createElement('iframe').featurePolicy.allowedFeatures().includes('display-capture')
+      },
+      {
+        url: 'https://chromestatus.com/features/5746559209701376',
+        name: 'CSS Overflow: scrollbar-gutter',
+        test: () => supportsCSSProp('scrollbarGutter')
+      }
+    ]
+  },
+  93: {
+    releaseDate: '2021-08-31',
+    tests: [
+      {
         url: 'https://chromestatus.com/feature/5642501387976704',
         name: 'AbortSignal.abort() static method',
-        test: () => isFunction(AbortSignal.abort)
+        test: () => isFunction(window.AbortSignal.abort)
       },
       {
         url: 'https://chromestatus.com/feature/5662263404920832',
