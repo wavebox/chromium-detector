@@ -48,8 +48,35 @@ const supportsCSSQuery = (query) => {
 
 // https://chromestatus.com/features
 const descriptors = {
-  95: {
+  97: {
     releaseDate: 'Pre-release',
+    isPreRelease: true,
+    tests: [
+      {
+        url: 'https://chromestatus.com/feature/5693639729610752',
+        name: 'Array and TypedArray findLast and findLastIndex',
+        test: () => isFunction([].findLast)
+      },
+      {
+        url: 'https://chromestatus.com/feature/5687325523705856',
+        name: 'transform: perspective(none)',
+        test: () => supportsCSSValue('transform', 'perspective(none)')
+      }
+    ]
+  },
+  96: {
+    releaseDate: 'Pre-release',
+    isPreRelease: true,
+    tests: [
+      {
+        url: 'https://chromestatus.com/feature/5646323212615680',
+        name: 'Media Queries: prefers-contrast feature',
+        test: () => window.matchMedia('(prefers-contrast: more)').media === 'prefers-contrast: more'
+      }
+    ]
+  },
+  95: {
+    releaseDate: '2021-10-19',
     isPreRelease: true,
     tests: [
       {
@@ -65,8 +92,7 @@ const descriptors = {
     ]
   },
   94: {
-    releaseDate: 'Pre-release',
-    isPreRelease: true,
+    releaseDate: '2021-09-21',
     tests: [
       {
         url: 'https://chromestatus.com/feature/5144822362931200',
