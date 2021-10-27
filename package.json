@@ -1,6 +1,6 @@
 {
   "name": "chromium-detector",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Feature detects the running version of Chromium without any UserAgent parsing",
   "main": "dist/chromium-detector.js",
   "module": "index.js",

@@ -71,7 +71,7 @@ const descriptors = {
       {
         url: 'https://chromestatus.com/feature/5646323212615680',
         name: 'Media Queries: prefers-contrast feature',
-        test: () => window.matchMedia('(prefers-contrast: more)').media === 'prefers-contrast: more'
+        test: () => window.matchMedia('(prefers-contrast: more)').media === '(prefers-contrast: more)'
       }
     ]
   },
