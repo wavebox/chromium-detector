@@ -55,7 +55,7 @@ const descriptors = {
       {
         url: 'https://chromestatus.com/features/5630001077551104',
         name: 'self.structuredClone()',
-        test: () => isFunction(this.structuredClone)
+        test: () => isFunction(window.structuredClone)
       }
     ]
   },
