@@ -48,6 +48,17 @@ const supportsCSSQuery = (query) => {
 
 // https://chromestatus.com/features
 const descriptors = {
+  98: {
+    releaseDate: 'Pre-release',
+    isPreRelease: true,
+    tests: [
+      {
+        url: 'https://chromestatus.com/features/5630001077551104',
+        name: 'self.structuredClone()',
+        test: () => isFunction(this.structuredClone)
+      }
+    ]
+  },
   97: {
     releaseDate: 'Pre-release',
     isPreRelease: true,
@@ -65,8 +76,7 @@ const descriptors = {
     ]
   },
   96: {
-    releaseDate: 'Pre-release',
-    isPreRelease: true,
+    releaseDate: '2021-11-15',
     tests: [
       {
         url: 'https://chromestatus.com/feature/5646323212615680',
