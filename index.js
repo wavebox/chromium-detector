@@ -48,9 +48,60 @@ const supportsCSSQuery = (query) => {
 
 // https://chromestatus.com/features
 const descriptors = {
-  98: {
+  102: {
     releaseDate: 'Pre-release',
     isPreRelease: true,
+    tests: [
+      {
+        url: 'https://chromestatus.com/feature/5703266176335872',
+        name: 'inert attribute',
+        test: () => document.createElement('div').inert !== undefined
+      }
+    ]
+  },
+  101: {
+    releaseDate: 'Pre-release',
+    isPreRelease: true,
+    tests: [
+      {
+        url: 'https://chromestatus.com/feature/5273474901737472',
+        name: 'Priority Hints',
+        test: () => document.createElement('img').fetchpriority !== undefined
+      }
+    ]
+  },
+  100: {
+    releaseDate: '2022-03-29',
+    tests: [
+      {
+        url: 'https://chromestatus.com/feature/5029737100476416',
+        name: 'AbortSignal.prototype.throwIfAborted',
+        test: () => isFunction(window.AbortSignal.prototype.throwIfAborted)
+      },
+      {
+        url: 'https://chromestatus.com/feature/5252960583942144',
+        name: 'Multi-Screen Window Placement',
+        test: () => isFunction(window.getScreenDetails)
+      }
+    ]
+  },
+  99: {
+    releaseDate: '2022-03-1',
+    tests: [
+      {
+        url: 'https://chromestatus.com/feature/5692248021794816',
+        name: 'HTMLInputElement showPicker()',
+        test: () => isFunction(document.createElement('input').showPicker)
+      },
+      {
+        url: 'https://chromestatus.com/feature/5679635154075648',
+        name: 'Unprefixed text-emphasis properties',
+        test: () => supportsCSSProp('text-emphasis')
+      }
+    ]
+  },
+  98: {
+    releaseDate: '2022-02-1',
     tests: [
       {
         url: 'https://chromestatus.com/features/5630001077551104',
@@ -60,8 +111,7 @@ const descriptors = {
     ]
   },
   97: {
-    releaseDate: 'Pre-release',
-    isPreRelease: true,
+    releaseDate: '2022-01-04',
     tests: [
       {
         url: 'https://chromestatus.com/feature/5693639729610752',
