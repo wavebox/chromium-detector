@@ -60,8 +60,7 @@ const descriptors = {
     ]
   },
   101: {
-    releaseDate: 'Pre-release',
-    isPreRelease: true,
+    releaseDate: '2022-04-26',
     tests: [
       {
         url: 'https://chromestatus.com/feature/5273474901737472',
